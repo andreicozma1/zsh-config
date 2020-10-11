@@ -1,6 +1,10 @@
 cd $HOME/Downloads
+
 sudo apt update &&
-sudo apt install vim gnome-tweaks gnome-shell-extensions gimp wget curl gdebi-core python3 python3-pip
+sudo apt install vim zip gnome-tweaks gnome-shell-extensions gimp wget curl gdebi-core python3 python3-pip
+
+# Install Build Tools
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip unzip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc genisoimage android-tools-adb android-tools-fastboot minicom m4 liblz4-tool libssl-dev
 
 # Install Git & Git-LFS
 sudo apt install git git-lfs
@@ -46,6 +50,12 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.micr
 sudo apt-get install apt-transport-https &&
 sudo apt-get update &&
 sudo apt-get install code # or code-insiders
+
+# Install Teams
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add - &&
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/teams.list' &&
+sudo apt-get update &&
+sudo apt-get install teams
 
 # Install Skype
 sudo snap install skype --classic
